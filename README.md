@@ -1,11 +1,12 @@
 # converter
 
-[color=#ff3333][size=large]A disposizione a questo link un convertitore di liste[/size][/color]
+Link Converter for enigma2 box tv list
 
 
-[align=center][url=http://corvone.altervista.org/converter/][img]http://corvone.altervista.org/converter/3.png[/img][/url][/align]
+
+<img src="http://corvone.altervista.org/converter/3.png[/img]
 
 
-[align=center][color=#3333cc]..::: Genera Lista Dvb 1*** :::.. ~ ..::: Genera Lista Iptv* :::.. ~ ..::: Genera Lista Gstreamer** :::.. [/color][/align]
+..::: Genera Lista Dvb 1*** :::.. ~ ..::: Genera Lista Iptv* :::.. ~ ..::: Genera Lista Gstreamer** :::..
 
-[align=center][color=#3333cc]..::: Genera Lista Exteplayer3** :::.. ~ ..::: Genera Lista Radio*** :::.. ~ ..::: Genera StreamLink**** :::..[/color][/align]
+..::: Genera Lista Exteplayer3** :::.. ~ ..::: Genera Lista Radio*** :::.. ~ ..::: Genera StreamLink**** :::..
