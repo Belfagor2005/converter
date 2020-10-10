@@ -1,0 +1,485 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script language="javascript" type="text/javascript">
+
+
+        String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); };
+
+        function WriteForm(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 4097:0:1:0:0:0:0:0:0:0:';
+//                                 s+='#SERVICE 4097:0:1:';
+//                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+
+        function WriteForm3(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 5002:0:1:0:0:0:0:0:0:0:http%3a//127.0.0.1%3a8088/';
+
+//                                 s+='#SERVICE 5002:0:1:';
+//                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+
+
+        function WriteForm2(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 5002:0:1:0:0:0:0:0:0:0:';
+
+//                                 s+='#SERVICE 5002:0:1:';
+//                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+
+
+
+    function WriteForm1(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 1:0:1:';
+                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+    function WriteForm4(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 4097:0:2:';
+                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+
+    function WriteForm5(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 5001:0:1:';
+                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+
+
+        function WriteForm6(e)
+        {
+            try
+            {
+                var base=document.getElementById("baseUrl").value;
+
+                e=document.getElementById("ExampleOutput");
+
+                l=e.value.split("\n");
+                s='#NAME TiVuStream List\n';
+                name='';
+                for (var i=0;i<l.length;i++)
+                    {
+                        v=l[i].trim();if (v=='') continue;
+                        if (v.indexOf("#")!==-1)
+                            {
+                                if (v.toUpperCase().indexOf("#EXTINF")!=-1)
+                                    {
+                                        ci=v.indexOf(',');
+                                        if (ci!==-1) name=v.substr(ci+1);
+                                    }
+                            }
+                        else
+                            {
+                                 if (v.trim().toUpperCase().indexOf('UDP:')!=-1)
+                                     {
+                                         url=base+v.replace('udp://@', "udp/","i");
+                                     }
+                                 else url=v;
+                                 url=url.replace(/:/g,'%3a');
+                                 name=name.replace(/#EXTINF:|[0-9],|-[1-9],|,/g,'');
+                                 name=name.replace(/^\s+/g,'');
+                                 if (name=='') name='LulullaJoyBlog'+i;
+                                 s+='#SERVICE 8193:0:1:0:0:0:0:0:0:0:yt%3a//';
+
+//                                 s+='#SERVICE 5002:0:1:';
+//                                 s+=i+':0:0:0:0:0:0:';
+                                 s+=url;
+                                 s+=':';
+                                 s+=name+'\n';
+                                 s+='#DESCRIPTION '
+                                 s+=name+'\n';
+                                 name='';
+                            }
+                    }
+
+                s=s.split('&').join('&amp;');
+                e.value=s;
+
+
+            }
+            catch(Err)
+            {
+                alert("Error: " + Err.description);
+            }
+            return false;
+        }
+        function OpenFormData(e)
+        {
+            var e=document.getElementById("ExampleOutput");
+            //window.open('data:text/xml,' + encodeURIComponent(e.value),'webtv_usr.xml');
+            var uri = 'data:application/octet-stream;charset=utf-8,' + encodeURIComponent(e.value);
+
+            var link = document.createElement("a");
+            link.href = uri;
+
+
+            link.style = "visibility:hidden";
+            link.download = "userbouquet.favourites.tv";
+
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+
+    </script>
+</head>
+<body style="background-image: url(background.jpg); background-attachment:fixed;">
+
+
+<body text="#00fae5" link="#0cfa00" vlink="#0cfa00" alink="#0cfa00">
+
+
+<center>
+        <div>
+        <a href="http://tivustream.com" target="_blank"><img src="1.png" border="0"> </a>
+        <img src="3.png" border="0">
+        <a href="http://corvone.altervista.org/forum/portal.php" target="_blank"><img src="2.png" border="0"> </a>
+
+        </div>
+          <tt><strong><ul><font color="#ff0000" size="5">Istruzioni:</font></strong><br>
+            <font size="4">
+                     Apri il file .m3u con un editor di testo<br>
+                     Incolla nel box il contenuto del file .m3u<br>
+                Clicca su "<b>Genera Lista..</b> (<font color="#ff0000">*</font>) (<font color="#ff0000">**</font>) (<font color="#ff0000">***</font>) (<font color="#ff0000">****</font>) "<br>
+                    Clicca su "<b>Scarica la Lista</b>"</font></ul></tt>
+    <tt><font size="5" color="#33FF33">Indirizzo UDPXY : </font></tt><input id="baseUrl" value="http://localhost:81/">
+      <br/>
+    <form>
+        <textarea id="ExampleOutput" style="width:85%" rows="25"></textarea>
+    </form>
+      <h2>
+      <a href="#" onclick="WriteForm1();">..::: Genera Lista Dvb 1*** :::..</a> ~ <a href="#" onclick="WriteForm();">..::: Genera Lista Iptv* :::..</a> ~ <a href="#" onclick="WriteForm5();">..::: Genera Lista Gstreamer** :::..</a>
+      </h2>
+    <h2>
+      <a href="#" onclick="WriteForm2();">..::: Genera Lista Exteplayer3** :::..</a> ~ <a href="#" onclick="WriteForm4();">..::: Genera Lista Radio*** :::..</a> ~ <a href="#" onclick="WriteForm3();">..::: Genera StreamLink**** :::..</a>
+      </h2>
+    <h2>
+      <a href="#" onclick="WriteForm6();">..::: Genera Lista eServiceUri - a proxy service for python-powered dynamic stream url resolving** :::..</a>
+      </h2>
+    <h2>
+    <font color="#ff9900" size="6" ><a href="#" onclick="OpenFormData();">..::: Scarica la Lista :::..</a></font>
+    </h2>
+
+    <li><font color="#ff0000">***</font> Dvb = "SERVICE 1:0:1:0:0:0:0:0:0:0:" -</li>
+    <li><font color="#ff0000">*</font> Iptv = "SERVICE 4097:0:1:0:0:0:0:0:0:0:" -</li>
+    <li><font color="#ff0000">**</font> Gstreamer = "SERVICE 5001:0:1:0:0:0:0:0:0:0:" -</li>
+    <li><font color="#ff0000">**</font> Exteplayer3 = "SERVICE 5002:0:1:0:0:0:0:0:0:0:" -</li>
+    <li><font color="#ff0000">***</font> Radio = "SERVICE 4097:0:2:0:0:0:0:0:0:0:" -</li>
+    <li><font color="#ff0000">****</font> Streamlink = "SERVICE 5002:0:1:0:0:0:0:0:0:0:http%3a//127.0.0.1%3a8088/" -</li>
+    <li><font color="#ff0000">****</font> eServiceUri <videoid> = "#SERVICE 8193:0:1:0:0:0:0:0:0:0:yt%3a//<videoid>:My Favorite YT-Live Channel" -</li>
+<br>
+<br>
+<strong><font color="#00fae5" size="4" ><a href="http://lululla.altervista.org/" target="_blank">..:::  ))^^(( by Lululla(c)2018:::..</font></strong>
+</center>
+<!-- <embed -->
+    <!-- src="AC_DC.mp3" -->
+    <!-- autostart="true" -->
+    <!-- loop="1" -->
+    <!-- hidden="true"> -->
+<!-- </embed> -->
+</body>
+</html>
